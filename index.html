@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lay the Next Step · Hope Stair Foundation</title>
+<meta name="description" content="The Hope Stair Foundation helps students in Korea before money quietly narrows what they let themselves want. Two things do it: money, and one adult who stays.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lay the Next Step · Hope Stair Foundation">
+<meta property="og:description" content="Money, and one adult who stays. Support the Hope Stair Foundation.">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#2f6f62">
+
+<style>
+:root{
+  --bg:#faf7f2;
+  --surface:#ffffff;
+  --ink:#22201d;
+  --ink-soft:#57534e;
+  --ink-faint:#8a837b;
+  --line:#e6dfd4;
+  --accent:#2f6f62;
+  --accent-soft:#eaf2ef;
+  --accent-ink:#245247;
+  --maxw:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15171a;
+    --surface:#1d2024;
+    --ink:#e9e5de;
+    --ink-soft:#b3ada4;
+    --ink-faint:#8b857c;
+    --line:#2e3238;
+    --accent:#79c3ae;
+    --accent-soft:#1e2a27;
+    --accent-ink:#a5dcca;
+  }
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:17px;
+  line-height:1.75;
+  overflow-wrap:break-word;
+}
+img,svg{max-width:100%}
+a{color:var(--accent-ink);text-underline-offset:.2em}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:4.5rem 0 3rem;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%);
+}
+.stairs{display:block;width:104px;height:auto;margin-bottom:1.75rem;color:var(--accent);opacity:.9}
+.eyebrow{
+  margin:0 0 1rem;font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-faint);font-weight:600;
+}
+h1{
+  margin:0 0 1.35rem;
+  font-size:clamp(2.3rem,7.5vw,3.4rem);
+  line-height:1.14;
+  letter-spacing:-0.028em;
+  font-weight:700;
+}
+.lede{margin:0 0 2rem;font-size:1.12rem;color:var(--ink-soft);max-width:34rem}
+.hero-cta{margin:0}
+
+/* ---------- sections ---------- */
+section{padding:3.25rem 0;border-bottom:1px solid var(--line)}
+h2{
+  margin:0 0 1.5rem;
+  font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;line-height:1.3;
+}
+h2::before{
+  content:"";display:block;width:2rem;height:3px;border-radius:2px;
+  background:var(--accent);margin-bottom:1rem;
+}
+p{margin:0 0 1.25rem}
+p:last-child{margin-bottom:0}
+.muted{color:var(--ink-soft)}
+
+/* ---------- use-of-funds list ---------- */
+.uses{list-style:none;margin:0;padding:0;display:grid;gap:.85rem}
+.uses li{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-left:3px solid var(--accent);
+  border-radius:.55rem;
+  padding:1rem 1.15rem;
+  line-height:1.65;
+}
+.uses b{display:block;font-weight:700;margin-bottom:.15rem}
+.uses span{color:var(--ink-soft);font-size:.97rem}
+
+/* ---------- donate ---------- */
+.cta{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--accent);color:#fff;
+  font-weight:700;font-size:1.05rem;
+  padding:.95rem 2rem;border-radius:999px;
+  text-decoration:none;
+  border:1px solid transparent;
+}
+@media (prefers-color-scheme: dark){ .cta{color:#10201c} }
+.cta:hover{filter:brightness(1.07)}
+.cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.cta-row{margin:0 0 1.1rem}
+.cta-sub{font-size:.95rem;color:var(--ink-soft)}
+.acct{
+  font-size:.95rem;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:.55rem;padding:.85rem 1.05rem;margin:0 0 1.5rem;
+}
+.acct code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.9em;background:var(--accent-soft);color:var(--accent-ink);
+  padding:.1rem .4rem;border-radius:.25rem;
+}
+
+.note{
+  background:var(--accent-soft);
+  border-radius:.6rem;
+  padding:1.15rem 1.3rem;
+  font-size:.97rem;
+  color:var(--ink-soft);
+  line-height:1.7;
+}
+.note b{color:var(--ink);font-weight:700}
+
+/* ---------- transparency ---------- */
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.facts li{display:flex;gap:.85rem;align-items:flex-start;color:var(--ink-soft)}
+.facts li::before{
+  content:"";flex:0 0 auto;width:.5rem;height:.5rem;margin-top:.66rem;
+  border-radius:50%;background:var(--accent);
+}
+
+/* ---------- faq ---------- */
+details{border-bottom:1px solid var(--line);padding:.35rem 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{
+  cursor:pointer;list-style:none;
+  padding:1rem 2rem 1rem 0;position:relative;
+  font-weight:600;line-height:1.5;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"";position:absolute;right:.4rem;top:1.35rem;
+  width:.55rem;height:.55rem;
+  border-right:2px solid var(--ink-faint);border-bottom:2px solid var(--ink-faint);
+  transform:rotate(45deg);transition:transform .18s ease;
+}
+details[open] summary::after{transform:rotate(-135deg);top:1.6rem}
+summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:.25rem}
+details p{margin:0 0 1.1rem;padding-right:1rem;color:var(--ink-soft);font-size:.98rem}
+
+/* ---------- footer ---------- */
+footer{padding:3.25rem 0 4.5rem}
+.addr{font-style:normal;color:var(--ink-soft);font-size:.97rem;line-height:1.8}
+.addr strong{display:block;color:var(--ink);font-size:1.05rem;font-weight:700;margin-bottom:.35rem}
+.addr .ko{font-weight:400;font-size:.9em;color:var(--ink-faint)}
+.closing{
+  margin:2.5rem 0 0;padding-top:2rem;border-top:1px solid var(--line);
+  font-size:1.15rem;line-height:1.7;letter-spacing:-0.015em;
+}
+.closing em{font-style:normal;color:var(--accent-ink);font-weight:700}
+
+@media (max-width:480px){
+  body{font-size:16px}
+  .hero{padding:3.25rem 0 2.5rem}
+  section{padding:2.75rem 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="stairs" viewBox="0 0 120 76" aria-hidden="true" fill="none">
+      <path d="M4 72h28V54h28V36h28V18h28" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="112" cy="9" r="5" fill="currentColor"/>
+    </svg>
+    <p class="eyebrow">Hope Stair Foundation · 희망 계단 장학회</p>
+    <h1>Lay the next step</h1>
+    <p class="lede">Two things do it. Money, and one adult who stays.</p>
+    <p class="hero-cta"><a class="cta" href="#donate">Give</a></p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <p>A student who runs out of money rarely leaves school on one dramatic afternoon. First the after-school classes go. Then comes a part-time job. Then they stop bringing up university, because bringing it up hurts. By the time anyone around them notices, the child has already, quietly, narrowed the range of what they allow themselves to want.</p>
+    <p>The Hope Stair Foundation exists to interrupt that sequence early. There are two ways to do it: money, and one adult who stays.</p>
+    <p class="muted">We were founded on 31 May 2026 in Yangpyeong, Gyeonggi-do, Republic of Korea. The scale is small on purpose. We would rather change a few students all the way through than pass by a thousand.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where your gift goes</h2>
+    <p class="muted">Not overhead. Not campaigns. These things:</p>
+    <ul class="uses">
+      <li><b>Tuition and school fees</b><span>So that a bank balance is not what decides how a semester turns out.</span></li>
+      <li><b>The cost of studying</b><span>Textbooks, transport, a desk, a lamp, an internet connection.</span></li>
+      <li><b>One semester without a part-time job</b><span>For a student in their final year of high school, this is the difference between really trying and going through the motions.</span></li>
+      <li><b>Mentoring</b><span>A trained adult meets the student regularly, for as long as it takes, working through the seven stages of <i>7 Hope Stairs</i> together.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="donate">
+  <div class="wrap">
+    <h2>How to give</h2>
+    <p>You can give through PayPal.</p>
+    <p class="cta-row">
+      <a class="cta" href="https://paypal.me/hopestair" target="_blank" rel="noopener">Give via PayPal</a>
+    </p>
+    <p class="cta-sub">You do not need a PayPal account — in most countries you can pay by credit or debit card as a guest. There is no minimum and no maximum. To give <a href="https://www.paypal.com/ncp/payment/JF7FRTDABRFZC" target="_blank" rel="noopener">every month instead</a>, use our recurring checkout page.</p>
+    <p class="acct">To send directly from your own PayPal account, our receiving address is <code>[PayPal account email]</code>.</p>
+    <div class="note">
+      <b>A note on amounts.</b> PayPal takes 4.4% + USD 0.30 on an international payment, and another 3% to convert it into Korean won — roughly 7.4% + 30 cents in total. Because of that fixed 30 cents, the smaller the gift the more of it disappears: about 10% of a US$10 gift, about 8% of a US$30 gift. If you were planning to send several small amounts, one slightly larger gift — or a monthly one — puts more of it in a student's hands.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where you can check how it is spent</h2>
+    <ul class="facts">
+      <li>Our annual report is published on this website.</li>
+      <li>All funds are held in a single account in the foundation's name. No personal account sits in between.</li>
+      <li>Each year's budget and financial statements are reviewed by the board, audited, and approved by the general assembly.</li>
+      <li>The foundation is not-for-profit and politically neutral. No income may be used for anything outside its stated purpose.</li>
+      <li>If the foundation dissolves, nothing returns to its founder. Remaining assets go to the state, to a local government, or to another non-profit doing the same work. That is Article 25 of our charter.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions we actually get</h2>
+
+    <details open>
+      <summary>Can I get a tax receipt?</summary>
+      <p>Not at present. We are an unincorporated association and have not yet been designated a public-interest organization by Korea's National Tax Service. There is no tax benefit for overseas donors in their own countries either. We would rather tell you plainly now than have you find out later.</p>
+    </details>
+
+    <details>
+      <summary>Who chooses the students?</summary>
+      <p>The board does, as set out in our charter. We look at circumstances and effort, not only grades.</p>
+    </details>
+
+    <details>
+      <summary>Can I sponsor one particular student?</summary>
+      <p>We do not accept gifts directed at a named individual — this is to protect the students. You may earmark a gift for a purpose, such as tuition, living costs, or the mentoring program, and we will spend it exactly there.</p>
+    </details>
+
+    <details>
+      <summary>How do I stop a monthly gift?</summary>
+      <p>You can cancel it yourself from your own PayPal account at any time. You do not need to contact us.</p>
+    </details>
+
+    <details>
+      <summary>Is this connected to the book <i>Climbing Hope</i>?</summary>
+      <p>Yes. The book's author founded this foundation, and the seven-stage program we run with students is the one described in the book. But buying the book is not a donation, and a donation is not a book purchase. They are separate — please do only whichever one you actually want to do.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Contact</h2>
+    <address class="addr">
+      <strong>Hope Stair Foundation <span class="ko">희망 계단 장학회</span></strong>
+      15 Samgasaemal-gil, Danwol-myeon, Yangpyeong-gun,<br>
+      Gyeonggi-do, Republic of Korea<br>
+      <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a>
+    </address>
+    <p class="closing">A life resembles a staircase. The climbing is theirs. <em>Laying the next step is ours.</em></p>
+  </div>
+</footer>
+
+</body>
+</html>

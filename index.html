@@ -62,8 +62,16 @@ a{color:var(--accent-ink);text-underline-offset:.2em}
 }
 .stairs{display:block;width:104px;height:auto;margin-bottom:1.75rem;color:var(--accent);opacity:.9}
 .eyebrow{
-  margin:0 0 1rem;font-size:.78rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-faint);font-weight:600;
+  margin:0 0 1.15rem;
+  font-size:1.22rem;
+  font-weight:800;
+  letter-spacing:.02em;
+  line-height:1.35;
+  color:var(--ink);
+}
+.eyebrow .ko{
+  font-size:.82em;font-weight:600;color:var(--ink-faint);
+  letter-spacing:0;white-space:nowrap;
 }
 h1{
   margin:0 0 1.35rem;
@@ -114,18 +122,21 @@ p:last-child{margin-bottom:0}
 @media (prefers-color-scheme: dark){ .cta{color:#10201c} }
 .cta:hover{filter:brightness(1.07)}
 .cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.cta-row{margin:0 0 1.1rem}
+.cta-row{margin:0 0 .9rem}
+.paylink{
+  margin:0 0 1.1rem;
+  font-size:1rem;font-weight:600;
+  color:var(--ink-soft);
+}
+.paylink a{
+  color:var(--accent-ink);
+  text-decoration:none;
+  border-bottom:2px solid var(--accent-soft);
+  padding-bottom:.05rem;
+  word-break:break-all;
+}
+.paylink a:hover{border-bottom-color:var(--accent)}
 .cta-sub{font-size:.95rem;color:var(--ink-soft)}
-.acct{
-  font-size:.95rem;color:var(--ink-soft);
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:.55rem;padding:.85rem 1.05rem;margin:0 0 1.5rem;
-}
-.acct code{
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.9em;background:var(--accent-soft);color:var(--accent-ink);
-  padding:.1rem .4rem;border-radius:.25rem;
-}
 
 .note{
   background:var(--accent-soft);
@@ -134,6 +145,7 @@ p:last-child{margin-bottom:0}
   font-size:.97rem;
   color:var(--ink-soft);
   line-height:1.7;
+  margin-top:1.5rem;
 }
 .note b{color:var(--ink);font-weight:700}
 
@@ -167,8 +179,12 @@ details p{margin:0 0 1.1rem;padding-right:1rem;color:var(--ink-soft);font-size:.
 /* ---------- footer ---------- */
 footer{padding:3.25rem 0 4.5rem}
 .addr{font-style:normal;color:var(--ink-soft);font-size:.97rem;line-height:1.8}
-.addr strong{display:block;color:var(--ink);font-size:1.05rem;font-weight:700;margin-bottom:.35rem}
-.addr .ko{font-weight:400;font-size:.9em;color:var(--ink-faint)}
+.addr strong{
+  display:block;color:var(--ink);
+  font-size:1.35rem;font-weight:800;letter-spacing:-0.01em;
+  line-height:1.35;margin-bottom:.5rem;
+}
+.addr .ko{font-weight:600;font-size:.72em;color:var(--ink-faint);letter-spacing:0}
 .closing{
   margin:2.5rem 0 0;padding-top:2rem;border-top:1px solid var(--line);
   font-size:1.15rem;line-height:1.7;letter-spacing:-0.015em;
@@ -179,6 +195,8 @@ footer{padding:3.25rem 0 4.5rem}
   body{font-size:16px}
   .hero{padding:3.25rem 0 2.5rem}
   section{padding:2.75rem 0}
+  .eyebrow{font-size:1.1rem}
+  .addr strong{font-size:1.2rem}
 }
 </style>
 </head>
@@ -190,7 +208,7 @@ footer{padding:3.25rem 0 4.5rem}
       <path d="M4 72h28V54h28V36h28V18h28" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="112" cy="9" r="5" fill="currentColor"/>
     </svg>
-    <p class="eyebrow">Hope Stair Foundation · 희망 계단 장학회</p>
+    <p class="eyebrow">Hope Stair Foundation <span class="ko">희망 계단 장학회</span></p>
     <h1>Lay the next step</h1>
     <p class="lede">Two things do it. Money, and one adult who stays.</p>
     <p class="hero-cta"><a class="cta" href="#donate">Give</a></p>
@@ -227,10 +245,10 @@ footer{padding:3.25rem 0 4.5rem}
     <p class="cta-row">
       <a class="cta" href="https://paypal.me/hopestair" target="_blank" rel="noopener">Give via PayPal</a>
     </p>
-    <p class="cta-sub">You do not need a PayPal account — in most countries you can pay by credit or debit card as a guest. There is no minimum and no maximum. To give <a href="https://www.paypal.com/ncp/payment/JF7FRTDABRFZC" target="_blank" rel="noopener">every month instead</a>, use our recurring checkout page.</p>
-    <p class="acct">To send directly from your own PayPal account, our receiving address is <code>[PayPal account email]</code>.</p>
+    <p class="paylink"><a href="https://paypal.me/hopestair" target="_blank" rel="noopener">paypal.me/hopestair</a></p>
+    <p class="cta-sub">You do not need a PayPal account — in most countries you can pay by credit or debit card as a guest. There is no minimum and no maximum.</p>
     <div class="note">
-      <b>A note on amounts.</b> PayPal takes 4.4% + USD 0.30 on an international payment, and another 3% to convert it into Korean won — roughly 7.4% + 30 cents in total. Because of that fixed 30 cents, the smaller the gift the more of it disappears: about 10% of a US$10 gift, about 8% of a US$30 gift. If you were planning to send several small amounts, one slightly larger gift — or a monthly one — puts more of it in a student's hands.
+      <b>A note on amounts.</b> PayPal takes 4.4% + USD 0.30 on an international payment, and another 3% to convert it into Korean won — roughly 7.4% + 30 cents in total. Because of that fixed 30 cents, the smaller the gift the more of it disappears: about 10% of a US$10 gift, about 8% of a US$30 gift. If you were planning to send several small amounts, one slightly larger gift puts more of it in a student's hands.
     </div>
   </div>
 </section>
@@ -265,11 +283,6 @@ footer{padding:3.25rem 0 4.5rem}
     <details>
       <summary>Can I sponsor one particular student?</summary>
       <p>We do not accept gifts directed at a named individual — this is to protect the students. You may earmark a gift for a purpose, such as tuition, living costs, or the mentoring program, and we will spend it exactly there.</p>
-    </details>
-
-    <details>
-      <summary>How do I stop a monthly gift?</summary>
-      <p>You can cancel it yourself from your own PayPal account at any time. You do not need to contact us.</p>
     </details>
 
     <details>

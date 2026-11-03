@@ -1,0 +1,1 @@
+var e={beta:!1,draftContent:!0,unlockReports:!0,modules:{saju:{enabled:!0},astro:{enabled:!0},tarot:{enabled:!0},verse:{enabled:!0},reminder:{enabled:!0}}};function t(t,n=e){let r=n.modules[t];return r?.enabled?!r.betaOnly||n.beta:!1}export{t as n,e as t};

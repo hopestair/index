@@ -1,0 +1,14 @@
+손금·관상 사진 도움(v0.22·v0.23)에 쓰는 기기 안 인식 도구. 사진은 브라우저 안에서만 분석하고 서버로 보내거나 저장하지 않는다.
+
+- hand_landmarker.task: Google MediaPipe Hand Landmarker, float16 v1 (손금 손형 추천)
+  https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+  sha256 fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1
+- face_landmarker.task: Google MediaPipe Face Landmarker, float16 v1 (관상 얼굴 모양 추천)
+  https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
+  sha256 64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff
+- hair_segmenter.tflite: Google MediaPipe Hair Segmenter, float32 (관상 이마선·삼정 추천)
+  https://storage.googleapis.com/mediapipe-models/image_segmenter/hair_segmenter/float32/latest/hair_segmenter.tflite
+  sha256 2628cf3ce5f695f604cbea2841e00befcaa3624bf80caf3664bef2656d59bf84
+- wasm/: @mediapipe/tasks-vision 1.1.1 (npm). 빌드할 때 node_modules에서 복사(vite.config.ts handWasm)
+
+모두 Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0)

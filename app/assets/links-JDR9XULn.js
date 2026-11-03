@@ -1,0 +1,1 @@
+var e={ko:``,en:`en/`,es:`es/`,"zh-Hans":`zh/`,ja:`ja/`};function t(t){return`https://hopestair.github.io/index/${e[t]??`en/`}`}var n=`https://paypal.me/hopestair`,r=`301-0387-3222-71`;export{n,t as r,r as t};

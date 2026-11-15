@@ -97,6 +97,13 @@ p:last-child{margin-bottom:0}
 .note b{color:var(--ink);font-weight:700}
 
 /* ---------- ways to give ---------- */
+.copy{font:inherit;font-size:.95rem;font-weight:600;padding:.55rem 1rem;border-radius:.6rem;border:1px solid var(--line);background:#fff;color:inherit;cursor:pointer}
+.copied{font-size:.9rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.auto{margin-top:1.25rem;padding:1rem 1.15rem;border-radius:.6rem;border:1px solid var(--line);background:var(--accent-soft)}
+.auto h4{margin:0 0 .4rem;font-size:1.02rem}
+.auto ol{margin:.6rem 0;padding-left:1.3rem}
+.auto li{margin:.3rem 0}
 .give-way{margin-top:2rem;padding-top:1.75rem;border-top:1px dashed var(--line)}
 .give-way:first-of-type{border-top:0;padding-top:0;margin-top:1.5rem}
 h3{margin:0 0 1rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.01em}
@@ -230,7 +237,18 @@ footer{padding:3.25rem 0 4.5rem}
         <dt>Account number</dt><dd class="acct">301-0387-3222-71</dd>
         <dt>Account holder</dt><dd>희망계단장학회 (Hope Stair Foundation)</dd>
       </dl>
+      <p class="cta-row"><button type="button" class="copy" data-copy="301-0387-3222-71" data-ok="Account number copied." data-fail="Couldn&#x27;t copy. Press and hold the account number to copy it.">Copy account number</button> <span class="copied" role="status" aria-live="polite"></span></p>
       <p class="cta-sub">This account is in the foundation's name. Transfers within Korea reach the students without PayPal fees.</p>
+      <div class="auto" id="monthly">
+        <h4>Monthly giving: an automatic transfer in your banking app</h4>
+        <p class="cta-sub">If you bank in Korea, you can give every month without a card: set up an automatic transfer once in your banking app. Most banking apps don't charge for it.</p>
+        <ol>
+          <li>Open the automatic transfer menu in your banking app (some banks call it a scheduled or standing transfer).</li>
+          <li>Enter the bank NongHyup, account number <span class="nowrap">301-0387-3222-71</span>, account holder 희망계단장학회. The copy button makes it easy.</li>
+          <li>Choose the day of the month and the amount, add your name or a nickname to show on our statement, and save.</li>
+        </ol>
+        <p class="cta-sub">You can change or stop the transfer in your banking app at any time. If you start giving monthly, let us know by email so we can thank you (you don't have to). <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,5 +291,6 @@ footer{padding:3.25rem 0 4.5rem}
   </div>
 </footer>
 
+<script>document.querySelectorAll('button[data-copy]').forEach(function(b){b.addEventListener('click',function(){var s=b.nextElementSibling;function done(m){s.textContent=m}if(navigator.clipboard){navigator.clipboard.writeText(b.dataset.copy).then(function(){done(b.dataset.ok)},function(){done(b.dataset.fail)})}else{done(b.dataset.fail)}})})</script>
 </body>
 </html>

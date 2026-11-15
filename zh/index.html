@@ -97,6 +97,13 @@ p:last-child{margin-bottom:0}
 .note b{color:var(--ink);font-weight:700}
 
 /* ---------- ways to give ---------- */
+.copy{font:inherit;font-size:.95rem;font-weight:600;padding:.55rem 1rem;border-radius:.6rem;border:1px solid var(--line);background:#fff;color:inherit;cursor:pointer}
+.copied{font-size:.9rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.auto{margin-top:1.25rem;padding:1rem 1.15rem;border-radius:.6rem;border:1px solid var(--line);background:var(--accent-soft)}
+.auto h4{margin:0 0 .4rem;font-size:1.02rem}
+.auto ol{margin:.6rem 0;padding-left:1.3rem}
+.auto li{margin:.3rem 0}
 .give-way{margin-top:2rem;padding-top:1.75rem;border-top:1px dashed var(--line)}
 .give-way:first-of-type{border-top:0;padding-top:0;margin-top:1.5rem}
 h3{margin:0 0 1rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.01em}
@@ -230,7 +237,18 @@ footer{padding:3.25rem 0 4.5rem}
         <dt>账号</dt><dd class="acct">301-0387-3222-71</dd>
         <dt>户名</dt><dd>희망계단장학회（希望阶梯奖学会）</dd>
       </dl>
+      <p class="cta-row"><button type="button" class="copy" data-copy="301-0387-3222-71" data-ok="已复制账号。" data-fail="复制失败。请长按账号复制。">复制账号</button> <span class="copied" role="status" aria-live="polite"></span></p>
       <p class="cta-sub">这是以本会名义开设的账户。在韩国国内转账，不会被扣 PayPal 手续费。</p>
+      <div class="auto" id="monthly">
+        <h4>每月定期捐赠：在银行应用里设置自动转账</h4>
+        <p class="cta-sub">如果你有韩国的银行账户，不用银行卡也能每月捐赠：只要在银行应用里设置一次自动转账。大多数银行应用转账不收手续费。</p>
+        <ol>
+          <li>在银行应用中打开“自动转账”菜单（有的银行叫“预约转账”或“定期转账”）。</li>
+          <li>收款银行选农协，账号 <span class="nowrap">301-0387-3222-71</span>，户名 희망계단장학회。用复制按钮会更方便。</li>
+          <li>设定每月转账的日期和金额，在对方存折显示处写上你的名字或昵称，然后保存。</li>
+        </ol>
+        <p class="cta-sub">自动转账随时可以在银行应用里修改或停止。如果你开始了每月捐赠，欢迎发邮件告诉我们，好让我们向你致谢（不告诉也没关系）。 <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,5 +291,6 @@ footer{padding:3.25rem 0 4.5rem}
   </div>
 </footer>
 
+<script>document.querySelectorAll('button[data-copy]').forEach(function(b){b.addEventListener('click',function(){var s=b.nextElementSibling;function done(m){s.textContent=m}if(navigator.clipboard){navigator.clipboard.writeText(b.dataset.copy).then(function(){done(b.dataset.ok)},function(){done(b.dataset.fail)})}else{done(b.dataset.fail)}})})</script>
 </body>
 </html>

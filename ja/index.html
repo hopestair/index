@@ -97,6 +97,13 @@ p:last-child{margin-bottom:0}
 .note b{color:var(--ink);font-weight:700}
 
 /* ---------- ways to give ---------- */
+.copy{font:inherit;font-size:.95rem;font-weight:600;padding:.55rem 1rem;border-radius:.6rem;border:1px solid var(--line);background:#fff;color:inherit;cursor:pointer}
+.copied{font-size:.9rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.auto{margin-top:1.25rem;padding:1rem 1.15rem;border-radius:.6rem;border:1px solid var(--line);background:var(--accent-soft)}
+.auto h4{margin:0 0 .4rem;font-size:1.02rem}
+.auto ol{margin:.6rem 0;padding-left:1.3rem}
+.auto li{margin:.3rem 0}
 .give-way{margin-top:2rem;padding-top:1.75rem;border-top:1px dashed var(--line)}
 .give-way:first-of-type{border-top:0;padding-top:0;margin-top:1.5rem}
 h3{margin:0 0 1rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.01em}
@@ -230,7 +237,18 @@ footer{padding:3.25rem 0 4.5rem}
         <dt>口座番号</dt><dd class="acct">301-0387-3222-71</dd>
         <dt>口座名義</dt><dd>희망계단장학회（希望階段奨学会）</dd>
       </dl>
+      <p class="cta-row"><button type="button" class="copy" data-copy="301-0387-3222-71" data-ok="口座番号をコピーしました。" data-fail="コピーできませんでした。口座番号を長押ししてコピーしてください。">口座番号をコピー</button> <span class="copied" role="status" aria-live="polite"></span></p>
       <p class="cta-sub">奨学会名義の口座です。韓国国内からの振込なら、PayPalの手数料はかかりません。</p>
+      <div class="auto" id="monthly">
+        <h4>毎月の定期寄付：銀行アプリで自動振込</h4>
+        <p class="cta-sub">韓国の銀行口座があれば、カードがなくても毎月寄付できます。銀行アプリで自動振込を一度設定するだけです。ほとんどの銀行アプリでは手数料がかかりません。</p>
+        <ol>
+          <li>銀行アプリで「自動振込」メニューを開きます（銀行によっては「予約振込」「定期振込」）。</li>
+          <li>振込先の銀行は農協、口座番号は <span class="nowrap">301-0387-3222-71</span>、口座名義は 희망계단장학회 です。コピーボタンを使うと簡単です。</li>
+          <li>毎月の振込日と金額を決め、相手の通帳に表示される名前にお名前かニックネームを入れて保存します。</li>
+        </ol>
+        <p class="cta-sub">自動振込は銀行アプリでいつでも変更・停止できます。定期寄付を始めたら、メールでお知らせください。お礼をお伝えします（お知らせいただかなくても大丈夫です）。 <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,5 +291,6 @@ footer{padding:3.25rem 0 4.5rem}
   </div>
 </footer>
 
+<script>document.querySelectorAll('button[data-copy]').forEach(function(b){b.addEventListener('click',function(){var s=b.nextElementSibling;function done(m){s.textContent=m}if(navigator.clipboard){navigator.clipboard.writeText(b.dataset.copy).then(function(){done(b.dataset.ok)},function(){done(b.dataset.fail)})}else{done(b.dataset.fail)}})})</script>
 </body>
 </html>

@@ -97,6 +97,13 @@ p:last-child{margin-bottom:0}
 .note b{color:var(--ink);font-weight:700}
 
 /* ---------- ways to give ---------- */
+.copy{font:inherit;font-size:.95rem;font-weight:600;padding:.55rem 1rem;border-radius:.6rem;border:1px solid var(--line);background:#fff;color:inherit;cursor:pointer}
+.copied{font-size:.9rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.auto{margin-top:1.25rem;padding:1rem 1.15rem;border-radius:.6rem;border:1px solid var(--line);background:var(--accent-soft)}
+.auto h4{margin:0 0 .4rem;font-size:1.02rem}
+.auto ol{margin:.6rem 0;padding-left:1.3rem}
+.auto li{margin:.3rem 0}
 .give-way{margin-top:2rem;padding-top:1.75rem;border-top:1px dashed var(--line)}
 .give-way:first-of-type{border-top:0;padding-top:0;margin-top:1.5rem}
 h3{margin:0 0 1rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.01em}
@@ -223,7 +230,18 @@ footer{padding:3.25rem 0 4.5rem}
         <dt>계좌번호</dt><dd class="acct">301-0387-3222-71</dd>
         <dt>예금주</dt><dd>희망계단장학회</dd>
       </dl>
+      <p class="cta-row"><button type="button" class="copy" data-copy="301-0387-3222-71" data-ok="계좌번호를 복사했어요." data-fail="복사하지 못했어요. 계좌번호를 길게 눌러 복사해 주세요.">계좌번호 복사</button> <span class="copied" role="status" aria-live="polite"></span></p>
       <p class="cta-sub">장학회 이름으로 된 계좌예요. PayPal 수수료가 붙지 않아요.</p>
+      <div class="auto" id="monthly">
+        <h4>매달 정기 후원: 은행 앱 자동이체</h4>
+        <p class="cta-sub">카드 없이도 쓰고 있는 은행 앱에서 자동이체를 한 번 걸어 두면 매달 정기 후원이 돼요. 은행 앱 이체는 대부분 수수료가 없어요.</p>
+        <ol>
+          <li>은행 앱에서 '자동이체' 메뉴를 열어요(은행에 따라 '예약이체'·'정기이체').</li>
+          <li>받는 은행은 농협, 계좌번호는 <span class="nowrap">301-0387-3222-71</span>, 예금주는 희망계단장학회예요. 계좌번호 복사 버튼을 쓰면 쉬워요.</li>
+          <li>매달 보낼 날짜와 금액을 정하고, 받는 통장에 보일 이름이나 별명을 적어 저장해요.</li>
+        </ol>
+        <p class="cta-sub">자동이체는 은행 앱에서 언제든 바꾸거나 멈출 수 있어요. 정기 후원을 시작하셨다면 이메일로 알려 주세요. 고마운 마음을 전할게요(알리지 않아도 괜찮아요). <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a></p>
+      </div>
     </div>
     <div class="give-way" id="paypal">
       <h3>해외: PayPal</h3>
@@ -273,5 +291,6 @@ footer{padding:3.25rem 0 4.5rem}
   </div>
 </footer>
 
+<script>document.querySelectorAll('button[data-copy]').forEach(function(b){b.addEventListener('click',function(){var s=b.nextElementSibling;function done(m){s.textContent=m}if(navigator.clipboard){navigator.clipboard.writeText(b.dataset.copy).then(function(){done(b.dataset.ok)},function(){done(b.dataset.fail)})}else{done(b.dataset.fail)}})})</script>
 </body>
 </html>

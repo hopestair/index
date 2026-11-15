@@ -97,6 +97,13 @@ p:last-child{margin-bottom:0}
 .note b{color:var(--ink);font-weight:700}
 
 /* ---------- ways to give ---------- */
+.copy{font:inherit;font-size:.95rem;font-weight:600;padding:.55rem 1rem;border-radius:.6rem;border:1px solid var(--line);background:#fff;color:inherit;cursor:pointer}
+.copied{font-size:.9rem;color:var(--ink-soft)}
+.nowrap{white-space:nowrap}
+.auto{margin-top:1.25rem;padding:1rem 1.15rem;border-radius:.6rem;border:1px solid var(--line);background:var(--accent-soft)}
+.auto h4{margin:0 0 .4rem;font-size:1.02rem}
+.auto ol{margin:.6rem 0;padding-left:1.3rem}
+.auto li{margin:.3rem 0}
 .give-way{margin-top:2rem;padding-top:1.75rem;border-top:1px dashed var(--line)}
 .give-way:first-of-type{border-top:0;padding-top:0;margin-top:1.5rem}
 h3{margin:0 0 1rem;font-size:1.1rem;font-weight:700;letter-spacing:-0.01em}
@@ -230,7 +237,18 @@ footer{padding:3.25rem 0 4.5rem}
         <dt>Número de cuenta</dt><dd class="acct">301-0387-3222-71</dd>
         <dt>Titular</dt><dd>희망계단장학회 (Hope Stair Foundation)</dd>
       </dl>
+      <p class="cta-row"><button type="button" class="copy" data-copy="301-0387-3222-71" data-ok="Número de cuenta copiado." data-fail="No se pudo copiar. Mantén pulsado el número de cuenta para copiarlo.">Copiar número de cuenta</button> <span class="copied" role="status" aria-live="polite"></span></p>
       <p class="cta-sub">La cuenta está a nombre de la fundación. Las transferencias dentro de Corea llegan sin comisiones de PayPal.</p>
+      <div class="auto" id="monthly">
+        <h4>Donación mensual: transferencia automática desde tu app bancaria</h4>
+        <p class="cta-sub">Si tienes cuenta en Corea, puedes donar cada mes sin tarjeta: programa una sola vez una transferencia automática en la app de tu banco. La mayoría de las apps bancarias no cobran por ello.</p>
+        <ol>
+          <li>Abre el menú de transferencias automáticas en la app de tu banco (algunos bancos lo llaman transferencia programada o periódica).</li>
+          <li>Indica el banco NongHyup, el número de cuenta <span class="nowrap">301-0387-3222-71</span> y, como titular, 희망계단장학회. El botón de copiar lo hace más fácil.</li>
+          <li>Elige el día del mes y el importe, escribe tu nombre o un apodo para que aparezca en nuestro extracto y guarda.</li>
+        </ol>
+        <p class="cta-sub">Puedes cambiar o detener la transferencia en la app de tu banco cuando quieras. Si empiezas a donar cada mes, avísanos por correo para darte las gracias (no es obligatorio). <a href="mailto:pokdae@gmail.com">pokdae@gmail.com</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,5 +291,6 @@ footer{padding:3.25rem 0 4.5rem}
   </div>
 </footer>
 
+<script>document.querySelectorAll('button[data-copy]').forEach(function(b){b.addEventListener('click',function(){var s=b.nextElementSibling;function done(m){s.textContent=m}if(navigator.clipboard){navigator.clipboard.writeText(b.dataset.copy).then(function(){done(b.dataset.ok)},function(){done(b.dataset.fail)})}else{done(b.dataset.fail)}})})</script>
 </body>
 </html>

@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-WkwZ5CU-.js";import{t}from"./react-BbggMMhK.js";import{i as n}from"./daily-BasUUgfL.js";var r=e(t(),1);function i(e,t){return(0,r.lazy)(()=>e().then(e=>({default:e[t]})))}function a(e,t){return(0,r.useMemo)(()=>{try{return n(e,t)}catch{return null}},[e,t])}export{i as n,a as t};

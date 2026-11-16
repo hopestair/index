@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-WkwZ5CU-.js";import{t}from"./react-BbggMMhK.js";import{t as n}from"./content-CfKdin5E.js";import{r}from"./engine-BKL6MbTf.js";var i=e(t(),1),a={id:`astro`,content:n(`astro`)};function o(e,t){return(0,i.useMemo)(()=>{try{return r(e,t)}catch{return null}},[e,t])}export{o as n,a as t};

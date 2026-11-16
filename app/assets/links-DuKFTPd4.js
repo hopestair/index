@@ -1,1 +1,0 @@
-var e=`https://hopestair.github.io/index`,t={ko:``,en:`en/`,es:`es/`,"zh-Hans":`zh/`,ja:`ja/`};function n(n){return`${e}/${t[n]??`en/`}`}var r=`${e}/app/`,i=`https://paypal.me/hopestair`,a=`301-0387-3222-71`;export{n as i,a as n,i as r,r as t};

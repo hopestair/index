@@ -1,0 +1,1 @@
+import{h as e,i as t}from"./compat-Dk6isCVX.js";import{t as n}from"./content-DpuAvKxN.js";import{r}from"./engine-C8Lwz7r5.js";t();var i={id:`astro`,content:n(`astro`)};function a(t,n){return e(()=>{try{return r(t,n)}catch{return null}},[t,n])}export{a as n,i as t};

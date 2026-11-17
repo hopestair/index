@@ -1,1 +1,0 @@
-import{a as e,h as t,i as n}from"./compat-Dk6isCVX.js";import{i as r}from"./daily-CUESXhUq.js";n();function i(t,n){return e(()=>t().then(e=>({default:e[n]})))}n();function a(e,n){return t(()=>{try{return r(e,n)}catch{return null}},[e,n])}export{i as n,a as t};

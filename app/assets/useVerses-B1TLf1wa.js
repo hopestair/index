@@ -1,0 +1,1 @@
+import{c as e,f as t,i as n}from"./compat-Dk6isCVX.js";import{f as r,s as i}from"./scripture-DVo5kTHw.js";n();function a(n){let a=[...new Set(n.filter(e=>!!e))].sort(),o=a.join(`,`),s=a.every(r),[,c]=t(0);return e(()=>{if(s||!o)return;let e=!0;return Promise.all(o.split(`,`).map(e=>i(e))).then(()=>e&&c(e=>e+1),()=>void 0),()=>{e=!1}},[o,s]),s}export{a as t};

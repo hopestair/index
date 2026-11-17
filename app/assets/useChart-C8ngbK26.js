@@ -1,0 +1,1 @@
+import{h as e,i as t}from"./compat-Dk6isCVX.js";import{n}from"./engine-DJc_S8SM.js";t();function r(e){try{return n(e)}catch{return null}}function i(t){return e(()=>r(t),[t])}export{i as n,r as t};

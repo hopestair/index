@@ -1,0 +1,1 @@
+var e={schemaVersion:3,id:`p_sample`,name:``,birth:{calendar:`solar`,lunarBasis:`kr`,leapMonth:!1,date:`1990-05-12`,time:`07:30`,place:{name:`kr`,lat:37.5665,lon:126.978,tz:`Asia/Seoul`}},gender:`female`,bloodType:null,mbti:null,religion:`secular`,options:{trueSolarTime:!0,dayBoundary:`midnight`}};export{e as t};

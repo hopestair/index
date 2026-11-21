@@ -1,7 +1,7 @@
 /*
  * 묵상 알림 서비스 워커 조각(src/modules/reminder/agent.ts와 짝). 빌드한 서비스 워커(sw.js)가 같은 주소에서 불러 쓴다.
  * 서버 없이 기기 안에서만: 앱이 기기 캐시 'dd-reminder'에 넣어 둔 알림 계획을 읽어,
- * 그날 시각이 지났고 아직 띄우지 않은 알림을 띄운다. 바깥으로 보내는 것은 없다.
+ * 그날 시각이 지났고 아직 띄우지 않은 알림을 띄운다(묵상 알림·아침 운세 알림). 바깥으로 보내는 것은 없다.
  */
 const DD_REMINDER_CACHE = 'dd-reminder';
 const DD_REMINDER_FILE = 'dd-reminder.json';
@@ -27,17 +27,21 @@ async function ddReminderShowDue() {
   const now = Date.now();
   const today = ddReminderToday(now);
   const shown = Array.isArray(plan.shown) ? plan.shown : [];
-  const due = plan.items.filter((i) => i.date === today && i.at <= now && !shown.includes(i.date)).pop();
-  if (!due) return;
-  plan.shown = [...shown, due.date].slice(-DD_REMINDER_KEEP);
+  // 종류마다(묵상·아침 운세, v0.40.4) 그날 하나씩. 띄운 기록의 이름은 key(없으면 날짜)
+  const keyOf = (i) => i.key || i.date;
+  const due = plan.items.filter((i) => i.date === today && i.at <= now && !shown.includes(keyOf(i)));
+  if (!due.length) return;
+  plan.shown = [...shown, ...due.map(keyOf)].slice(-DD_REMINDER_KEEP);
   await cache.put(ddReminderUrl(), new Response(JSON.stringify(plan), { headers: { 'Content-Type': 'application/json' } }));
-  await self.registration.showNotification(due.title, {
-    body: due.body,
-    tag: 'dd-reminder',
-    lang: plan.lang,
-    icon: 'pwa-192.png',
-    data: { url: './#/m/verse' },
-  });
+  for (const item of due) {
+    await self.registration.showNotification(item.title, {
+      body: item.body,
+      tag: item.tag || 'dd-reminder',
+      lang: plan.lang,
+      icon: 'pwa-192.png',
+      data: { url: item.url || './#/m/verse' },
+    });
+  }
 }
 
 self.addEventListener('periodicsync', (event) => {
@@ -46,7 +50,7 @@ self.addEventListener('periodicsync', (event) => {
 
 // 알림을 누르면 열려 있는 앱 창으로 가고, 없으면 오늘의 구절 화면을 연다
 self.addEventListener('notificationclick', (event) => {
-  if (event.notification.tag !== 'dd-reminder') return;
+  if (event.notification.tag !== 'dd-reminder' && event.notification.tag !== 'dd-fortune') return;
   event.notification.close();
   const url = new URL((event.notification.data && event.notification.data.url) || './', self.registration.scope).href;
   event.waitUntil(

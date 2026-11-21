@@ -1,0 +1,1 @@
+import{a as e,i as t}from"./compat-Dk6isCVX.js";t();function n(t,n){return e(()=>t().then(e=>({default:e[n]})))}export{n as t};

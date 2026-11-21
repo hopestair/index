@@ -1,0 +1,1 @@
+import{t as e}from"./content-QlziFOVE.js";import{i as t}from"./engine-DJc_S8SM.js";import{n}from"./daily-BMzZgaJt.js";var r={id:`saju`,content:e(`saju`)},i=new Map(n.map(e=>[e.id,e.status])),a=(e,n=t.draftContent)=>i.get(e)===`confirmed`||n&&i.has(e);function o(e,t){return!e||!t||!a(t)?null:e(`saju`,t)}export{o as n,r as t};
